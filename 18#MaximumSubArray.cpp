@@ -28,9 +28,20 @@ try coding another solution using the divide and conquer approach, which is more
 #include<bits/stdc++.h>
 using namespace std;
 
-int MaximumSubArray(vector<int> nums){
-
-}
+int maxSubArray(vector<int>& nums) {
+        int maxSum=INT_MIN;
+        int currSum=0;
+        for(int i=0;i<nums.size();i++){
+            currSum+=nums[i];
+            if(currSum>maxSum){
+                maxSum = currSum;
+            }
+            if(currSum < 0){
+                currSum = 0;
+            }
+        }
+        return maxSum;
+    }
 
 int main(){
     int n;
@@ -43,6 +54,6 @@ int main(){
         nums.push_back(tp);
     }
 
-    cout<<MaximumSubArray(nums);
+    cout<<maxSubArray(nums);
     return 0;
 }
