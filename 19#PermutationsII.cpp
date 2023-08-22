@@ -19,8 +19,16 @@ Constraints:
 #include<bits/stdc++.h>
 using namespace std;
 
-void PermutationsII(vector<int> nums,vector<vector<int>>& ans){
-
+void PermutationsII(vector<int> nums, int i, int j, vector<vector<int>>& ans){
+    if (i == j-1) {
+        ans.push_back(nums);
+        return;
+    }
+    for(int k = i; k < j; k++) {
+        if (i != k && nums[i] == nums[k]) continue;
+        swap(nums[i], nums[k]);
+        PermutationsII(nums, i+1, j, ans);
+    }
 }
 
 int main(){
@@ -33,7 +41,16 @@ int main(){
         cin>>tp;
         nums.push_back(tp);
     }
+
+    sort(nums.begin(), nums.end());
     vector<vector<int>> ans;
-    PermutationsII(nums,ans);
+    PermutationsII(nums, 0, nums.size(), ans);
+    
+    for(auto num : ans){
+        for(auto n: num){
+            cout<<n<<" ";
+        }
+        cout<<"\n";
+    }
     return 0;
 }

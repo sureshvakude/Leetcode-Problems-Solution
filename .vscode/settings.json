@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ratio": "cpp"
     },
     "code-runner.clearPreviousOutput": true,
     "code-runner.ignoreSelection": true,
