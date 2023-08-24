@@ -28,9 +28,31 @@ It's guaranteed that you can reach nums[n - 1]
 using namespace std;
 
 int jump(vector<int>& nums) {
-        
+     int jump = 0;
+        int left = 0;
+        int right = 0;
+        while(right < nums.size() - 1){
+            int maxJumpSize = 0;
+            for(int i=left;i<=right;i++){
+                maxJumpSize = max(maxJumpSize,i+nums[i]);
+            }
+            left = right + 1;
+            right = maxJumpSize;
+            jump++;
+        }
+        return jump;   
 }
 
 int main(){
+    int n;
+    cin>>n;
+
+    vector<int> nums;
+    for(int i=0;i<n;i++){
+        int tp;
+        cin>>tp;
+        nums.push_back(tp);
+    }
+    cout<<jump(nums);
     return 0;
 }
