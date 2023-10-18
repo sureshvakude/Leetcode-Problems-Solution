@@ -49,6 +49,6 @@ string countAndSay(int n) {
 }
 
 int main(){
-    cout<<countAndSay(3);
+    cout<<countAndSay(30);
     return 0;
 }
