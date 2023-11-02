@@ -45,5 +45,16 @@ vector<vector<int>> merge(vector<vector<int>>& intervals) {
 }
 
 int main(){
+
+    vector<vector<int>> intervals = {{1,15},{2,6},{8,10},{15,18}};
+
+    vector<vector<int>> ans = merge(intervals);
+
+    for(auto a: ans){
+        for(auto s: a){
+            cout<<s<<" ";
+        }
+        cout<<"\n";
+    }
     return 0;
 }
