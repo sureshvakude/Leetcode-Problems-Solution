@@ -27,3 +27,22 @@ s and t consist of any valid ascii character.
 
 */
 
+#include<bits/stdc++.h>
+using namespace std;
+
+bool isIsomorphic(string s, string t) {
+    if(s.length() != t.length()) return false;
+
+    unordered_map<char,char> Smap, Tmap;
+    for(int i=0; i<s.size(); i++){
+        if(Smap[s[i]] && Smap[s[i]]!=t[i]) return false;
+        if(Tmap[t[i]] && Tmap[t[i]]!=s[i]) return false;
+        Smap[s[i]] = t[i];
+        Tmap[t[i]] = s[i];
+    }   
+    return true;
+}
+
+int main(){
+    return 0;
+}
