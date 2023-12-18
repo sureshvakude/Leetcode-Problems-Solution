@@ -53,3 +53,10 @@ int findMaxSum(int *arr, int n) {
     
     return max(incl, excl);
 }
+
+int main(){
+    int arr[] = {5, 5, 10, 100, 10, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    cout<<findMaxSum(arr,n);
+    return 0;
+}
